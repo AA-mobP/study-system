@@ -75,6 +75,20 @@ function setupEventListeners() {
   document.getElementById("start-btn").addEventListener("click", startQuiz);
   document.getElementById("pause-btn").addEventListener("click", togglePause);
   document.getElementById("prev-btn").addEventListener("click", navigatePrev);
+  // إضافة مستمعي الأحداث الجدد
+  document
+    .getElementById("load-file-btn")
+    .addEventListener("click", openFilePicker);
+  document
+    .getElementById("json-file")
+    .addEventListener("keypress", handleFileInputKeypress);
+  document
+    .getElementById("flashcards-tab")
+    .addEventListener("click", switchToFlashcards);
+  document.getElementById("quiz-tab").addEventListener("click", switchToQuiz);
+  document
+    .getElementById("dark-mode-toggle")
+    .addEventListener("click", toggleDarkMode);
   document
     .getElementById("flip-btn")
     .addEventListener("click", flipCurrentCard);
@@ -86,6 +100,58 @@ function setupEventListeners() {
 
   // أحداث لوحة المفاتيح
   document.addEventListener("keydown", handleKeyDown);
+}
+
+// دالة التعامل مع الضغط على Enter في مربع النص
+function handleFileInputKeypress(e) {
+  if (e.key === "Enter") {
+    const filename = document.getElementById("json-file").value.trim();
+    if (filename) {
+      loadJsonFile(filename);
+    }
+  }
+}
+
+// دوال التبديل بين الأوضاع
+function switchToFlashcards() {
+  appState.currentMode = "flashcard";
+  updateUITabs("flashcard");
+  initializeQuiz(appState.quizData, appState.username);
+  updateUI(getCurrentQuestion(), getQuizStatus());
+}
+
+function switchToQuiz() {
+  if (
+    confirm(
+      "هل تريد بدء الاختبار؟ سيتم بدء المؤقت ولن يمكنك العودة للبطاقات أثناء الاختبار."
+    )
+  ) {
+    appState.currentMode = "quiz";
+    updateUITabs("quiz");
+    initializeQuiz(appState.quizData, appState.username);
+    updateUI(getCurrentQuestion(), getQuizStatus());
+    startTimer();
+  }
+}
+
+// دالة تحديث التبويبات
+function updateUITabs(activeTab) {
+  document
+    .getElementById("flashcards-tab")
+    .classList.toggle("active", activeTab === "flashcard");
+  document
+    .getElementById("quiz-tab")
+    .classList.toggle("active", activeTab === "quiz");
+}
+
+// دالة تبديل الوضع الداكن
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  const isDarkMode = document.body.classList.contains("dark-mode");
+  localStorage.setItem("darkMode", isDarkMode);
+  document.getElementById("dark-mode-toggle").textContent = isDarkMode
+    ? "☀️"
+    : "🌙";
 }
 
 // بدء الاختبار

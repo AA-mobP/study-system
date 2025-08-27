@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نظام الدراسة والاختبار التفاعلي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>نظام الدراسة والاختبار التفاعلي</h1>
+            <div class="controls">
+                <div class="input-group">
+                    <label for="json-file">ملف JSON:</label>
+                    <input type="text" id="json-file" placeholder="اسم ملف JSON">
+                </div>
+                <div class="input-group">
+                    <label for="username">اسم المستخدم:</label>
+                    <input type="text" id="username" placeholder="أدخل اسمك">
+                </div>
+                <button id="start-btn">ابدأ الاختبار</button>
+                <button id="pause-btn" disabled>إيقاف مؤقت</button>
+            </div>
+        </header>
+
+        <main>
+            <div id="quiz-info">
+                <span id="quiz-title"></span>
+                <span id="question-counter"></span>
+                <div id="timer-container">
+                    <div id="timer-bar"></div>
+                    <span id="timer-text"></span>
+                </div>
+            </div>
+
+            <div id="content-area">
+                <!-- ستتم إضافة البطاقات والأسئلة ديناميكيًا هنا -->
+            </div>
+
+            <div id="navigation">
+                <button id="prev-btn" disabled>السابق</button>
+                <button id="flip-btn" disabled>قلب البطاقة</button>
+                <button id="next-btn" disabled>التالي</button>
+            </div>
+
+            <div id="results" class="hidden">
+                <h2>نتيجة الاختبار</h2>
+                <div id="stats">
+                    <p>عدد الأسئلة: <span id="total-questions"></span></p>
+                    <p>الإجابات الصحيحة: <span id="correct-answers"></span></p>
+                    <p>الإجابات الخاطئة: <span id="wrong-answers"></span></p>
+                    <p>عدد التوقفات: <span id="pauses-count"></span></p>
+                </div>
+                
+                <div id="wrong-questions-list" class="hidden">
+                    <h3>الأسئلة التي أخطأت فيها:</h3>
+                    <ul id="wrong-questions"></ul>
+                </div>
+                
+                <div id="comparison-section" class="hidden">
+                    <button id="compare-btn">مقارنة أدائك بالامتحانات السابقة</button>
+                    <div id="leaderboard" class="hidden">
+                        <h3>لوحة الصدارة</h3>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>المستخدم</th>
+                                    <th>الإجابات الصحيحة</th>
+                                    <th>النسبة المئوية</th>
+                                </tr>
+                            </thead>
+                            <tbody id="leaderboard-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <button id="restart-btn">إعادة الاختبار</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- العناصر الخاصة بالتأثيرات البصرية -->
+    <div id="flash-overlay" class="flash-hidden"></div>
+
+    <!-- الصوتيات -->
+    <audio id="correct-sound" src="assets/sounds/correct.mp3" preload="auto"></audio>
+    <audio id="wrong-sound" src="assets/sounds/wrong.mp3" preload="auto"></audio>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

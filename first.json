@@ -1,0 +1,95 @@
+{
+  "quizTitle": "اختبار الثقافة العامة",
+  "timer": 30,
+  "flashcards": [
+    {
+      "question": "ما هي عاصمة فرنسا؟",
+      "answer": "باريس"
+    },
+    {
+      "question": "كم عدد كواكب المجموعة الشمسية؟",
+      "answer": "8 كواكب"
+    },
+    {
+      "question": "من هو مؤلف كتاب 'الأيام'؟",
+      "answer": "طه حسين"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "question": "ما هي أطول سلسلة جبال في العالم؟",
+      "correctAnswer": "جبال الأنديز",
+      "incorrectAnswers": [
+        "جبال الهيمالايا",
+        "جبال الألب",
+        "جبال روكي"
+      ]
+    },
+    {
+      "question": "ما هو العنصر الكيميائي الذي رمزه 'O'؟",
+      "correctAnswer": "الأكسجين",
+      "incorrectAnswers": [
+        "الذهب",
+        "الحديد",
+        "الكربون"
+      ]
+    },
+    {
+      "question": "في أي عام انتهت الحرب العالمية الثانية؟",
+      "correctAnswer": "1945",
+      "incorrectAnswers": [
+        "1918",
+        "1939",
+        "1950"
+      ]
+    },
+    {
+      "question": "ما هي اللغة الرسمية في البرازيل؟",
+      "correctAnswer": "البرتغالية",
+      "incorrectAnswers": [
+        "الإسبانية",
+        "الإنجليزية",
+        "الفرنسية"
+      ]
+    },
+    {
+      "question": "من هو مؤسس Microsoft؟",
+      "correctAnswer": "بيل جيتس",
+      "incorrectAnswers": [
+        "ستيف جوبز",
+        "مارك زوكربيرج",
+        "لاري بيج"
+      ]
+    }
+  ],
+  "stats": [
+    {
+      "username": "أحمد",
+      "date": "2023-10-15T14:30:00Z",
+      "mode": "quiz",
+      "totalQuestions": 5,
+      "correct": 4,
+      "wrong": 1,
+      "skipped": 0,
+      "pauses": 0,
+      "avgTimePerQuestionSec": 12.5,
+      "perQuestionTimeSec": [10, 15, 8, 12, 18],
+      "wrongQuestionsList": [2],
+      "scorePercent": 80
+    },
+    {
+      "username": "محمد",
+      "date": "2023-10-16T09:15:00Z",
+      "mode": "quiz",
+      "totalQuestions": 5,
+      "correct": 3,
+      "wrong": 2,
+      "skipped": 0,
+      "pauses": 1,
+      "avgTimePerQuestionSec": 18.2,
+      "perQuestionTimeSec": [20, 15, 22, 16, 18],
+      "wrongQuestionsList": [1, 3],
+      "scorePercent": 60
+    }
+  ]
+}

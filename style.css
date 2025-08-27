@@ -1,0 +1,852 @@
+/* ===== متغيرات التصميم والألوان ===== */
+:root {
+  /* الألوان الأساسية */
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --success-color: #2ecc71;
+  --warning-color: #f39c12;
+  --info-color: #1abc9c;
+  
+  /* الألوان المحايدة */
+  --dark-color: #2c3e50;
+  --light-color: #ecf0f1;
+  --gray-color: #95a5a6;
+  --white-color: #ffffff;
+  --black-color: #333333;
+  
+  /* ألوان الخلفية */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8f9fa;
+  --bg-dark: #34495e;
+  
+  /* ألوان النصوص */
+  --text-primary: #2c3e50;
+  --text-secondary: #7f8c8d;
+  --text-light: #ecf0f1;
+  --text-dark: #2c3e50;
+  
+  /* ألوان الحدود */
+  --border-color: #ddd;
+  --border-light: #eee;
+  --border-dark: #ccc;
+  
+  /* الظلال */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-inset: inset 0 1px 2px rgba(0, 0, 0, 0.1);
+  
+  /* أنصاف الأقطار */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 20px;
+  
+  /* المسافات */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  
+  /* الأحجام */
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-md: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 24px;
+  --font-size-xxl: 32px;
+  
+  /* أوزان الخطوط */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  
+  /* التحويلات والانتقالات */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* ===== إعادة الضبط الأساسية ===== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: var(--bg-secondary);
+  padding: var(--space-md);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* تحسين النص للعربية */
+body[dir="rtl"] {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: right;
+}
+
+/* ===== الحاوية الرئيسية ===== */
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  background: var(--bg-primary);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== الرأس ===== */
+header {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: var(--space-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--info-color));
+}
+
+header h1 {
+  font-size: var(--font-size-xl);
+  margin-bottom: var(--space-md);
+  font-weight: var(--font-weight-bold);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* عناصر التحكم */
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-md);
+  margin-top: var(--space-md);
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  flex: 1;
+}
+
+.input-group label {
+  margin-bottom: var(--space-xs);
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-sm);
+}
+
+.input-group input {
+  padding: var(--space-sm);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-md);
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* ===== الأزرار ===== */
+button {
+  padding: var(--space-sm) var(--space-md);
+  background: var(--secondary-color);
+  color: var(--white-color);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-medium);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  min-height: 40px;
+}
+
+button:hover {
+  background: #2980b9;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+button:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-sm);
+}
+
+button:disabled {
+  background: var(--gray-color);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.3);
+}
+
+/* أنواع الأزرار */
+button.primary {
+  background: var(--secondary-color);
+}
+
+button.success {
+  background: var(--success-color);
+}
+
+button.warning {
+  background: var(--warning-color);
+}
+
+button.danger {
+  background: var(--accent-color);
+}
+
+/* ===== معلومات الاختبار ===== */
+#quiz-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md);
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+#quiz-title {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--primary-color);
+}
+
+#question-counter {
+  background: var(--primary-color);
+  color: var(--text-light);
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-xl);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* المؤقت */
+#timer-container {
+  width: 150px;
+  height: 30px;
+  background: var(--bg-secondary);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow-inset);
+}
+
+#timer-bar {
+  height: 100%;
+  width: 100%;
+  background: var(--secondary-color);
+  transition: width 1s linear, background-color 0.5s ease;
+  border-radius: var(--radius-xl);
+}
+
+#timer-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--text-dark);
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-sm);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);
+}
+
+/* ===== منطقة المحتوى ===== */
+#content-area {
+  padding: var(--space-xl);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--bg-primary);
+}
+
+/* البطاقات التعليمية */
+.flashcard {
+  width: 100%;
+  max-width: 600px;
+  min-height: 200px;
+  perspective: 1000px;
+  margin-bottom: var(--space-lg);
+}
+
+.flashcard-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform var(--transition-normal);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flashcard.flipped .flashcard-inner {
+  transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  flex-direction: column;
+}
+
+.flashcard-front {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--border-light);
+}
+
+.flashcard-back {
+  background: var(--bg-secondary);
+  color: var(--text-dark);
+  transform: rotateY(180deg);
+  border: 1px solid var(--border-color);
+}
+
+.flashcard h3 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-md);
+  font-weight: var(--font-weight-bold);
+}
+
+.flashcard p {
+  font-size: var(--font-size-md);
+  line-height: 1.6;
+}
+
+.flashcard-hint {
+  font-size: var(--font-size-sm) !important;
+  color: var(--text-secondary);
+  margin-top: var(--space-md);
+  font-style: italic;
+}
+
+/* الأسئلة */
+.question {
+  width: 100%;
+}
+
+.question-text {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-lg);
+  font-weight: var(--font-weight-bold);
+  text-align: center;
+  line-height: 1.4;
+}
+
+.answers {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-sm);
+  width: 100%;
+}
+
+.answer-btn {
+  padding: var(--space-md);
+  text-align: right;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  font-size: var(--font-size-md);
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.answer-btn:hover {
+  background: var(--bg-primary);
+  border-color: var(--secondary-color);
+  transform: translateX(-5px);
+}
+
+.answer-btn:focus {
+  outline: none;
+  border-color: var(--secondary-color);
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.answer-btn.correct {
+  background: #d4edda;
+  border-color: #c3e6cb;
+  color: #155724;
+}
+
+.answer-btn.wrong {
+  background: #f8d7da;
+  border-color: #f5c6cb;
+  color: #721c24;
+}
+
+.answer-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* رسالة عدم وجود محتوى */
+.no-content {
+  text-align: center;
+  padding: var(--space-xl);
+  color: var(--text-secondary);
+}
+
+.no-content h3 {
+  margin-bottom: var(--space-md);
+  font-size: var(--font-size-lg);
+}
+
+/* ===== التنقل ===== */
+#navigation {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  padding: var(--space-md);
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-color);
+  flex-wrap: wrap;
+}
+
+/* ===== النتائج ===== */
+#results {
+  padding: var(--space-xl);
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+#results h2 {
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+#stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+#stats p {
+  padding: var(--space-md);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: var(--shadow-sm);
+}
+
+#stats p span {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-lg);
+  color: var(--primary-color);
+  margin-top: var(--space-xs);
+}
+
+/* قائمة الأسئلة الخاطئة */
+#wrong-questions-list {
+  background: var(--bg-secondary);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+}
+
+#wrong-questions-list h3 {
+  margin-bottom: var(--space-md);
+  color: var(--accent-color);
+  font-size: var(--font-size-lg);
+}
+
+#wrong-questions {
+  list-style: none;
+}
+
+#wrong-questions li {
+  padding: var(--space-sm);
+  margin-bottom: var(--space-xs);
+  background: var(--bg-primary);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--accent-color);
+  transition: transform var(--transition-fast);
+}
+
+#wrong-questions li:hover {
+  transform: translateX(5px);
+}
+
+/* قسم المقارنة */
+#comparison-section {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+/* لوحة الصدارة */
+#leaderboard {
+  background: var(--bg-secondary);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-md);
+}
+
+#leaderboard h3 {
+  margin-bottom: var(--space-md);
+  color: var(--primary-color);
+  text-align: center;
+  font-size: var(--font-size-lg);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-md);
+  background: var(--bg-primary);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+th, td {
+  padding: var(--space-sm);
+  text-align: center;
+  border: 1px solid var(--border-color);
+}
+
+th {
+  background: var(--primary-color);
+  color: var(--text-light);
+  font-weight: var(--font-weight-medium);
+}
+
+tr:nth-child(even) {
+  background: var(--bg-secondary);
+}
+
+tr:hover {
+  background: rgba(52, 152, 219, 0.1);
+}
+
+/* المراكز الأولى */
+.rank-1 {
+  background: linear-gradient(90deg, #ffd700, #fff8c9) !important;
+}
+
+.rank-2 {
+  background: linear-gradient(90deg, #c0c0c0, #e8e8e8) !important;
+}
+
+.rank-3 {
+  background: linear-gradient(90deg, #cd7f32, #e9c9a9) !important;
+}
+
+/* ===== التأثيرات البصرية ===== */
+#flash-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity var(--transition-normal);
+}
+
+.flash-correct {
+  background: rgba(46, 204, 113, 0.3);
+}
+
+.flash-wrong {
+  background: rgba(231, 76, 60, 0.3);
+}
+
+.flash-visible {
+  opacity: 1;
+}
+
+/* رسائل الخطأ */
+.error-message {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: var(--accent-color);
+  color: var(--text-light);
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  z-index: 10000;
+  max-width: 300px;
+  box-shadow: var(--shadow-lg);
+  animation: slideInRight 0.3s ease, fadeOut 0.5s ease 4.5s forwards;
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ===== الحالات المخفية ===== */
+.hidden {
+  display: none !important;
+}
+
+/* ===== التجاوب مع الشاشات المختلفة ===== */
+@media (max-width: 768px) {
+  body {
+    padding: var(--space-sm);
+  }
+  
+  .container {
+    border-radius: var(--radius-md);
+  }
+  
+  header {
+    padding: var(--space-md);
+  }
+  
+  header h1 {
+    font-size: var(--font-size-lg);
+  }
+  
+  .controls {
+    flex-direction: column;
+  }
+  
+  .input-group {
+    min-width: 100%;
+  }
+  
+  #quiz-info {
+    flex-direction: column;
+    text-align: center;
+    gap: var(--space-sm);
+  }
+  
+  #content-area {
+    padding: var(--space-lg);
+  }
+  
+  .flashcard {
+    min-height: 150px;
+  }
+  
+  .flashcard-front, .flashcard-back {
+    padding: var(--space-md);
+  }
+  
+  .question-text {
+    font-size: var(--font-size-md);
+  }
+  
+  #navigation {
+    flex-direction: column;
+  }
+  
+  #stats {
+    grid-template-columns: 1fr;
+  }
+  
+  #results {
+    padding: var(--space-md);
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-md: 14px;
+    --font-size-lg: 16px;
+    --font-size-xl: 20px;
+  }
+  
+  .flashcard h3 {
+    font-size: var(--font-size-md);
+  }
+  
+  .answer-btn {
+    padding: var(--space-sm);
+    font-size: var(--font-size-sm);
+  }
+  
+  #timer-container {
+    width: 120px;
+  }
+}
+
+/* ===== تحسينات للوضع المظلم ===== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #1a1a1a;
+    --bg-secondary: #2d2d2d;
+    --text-primary: #f0f0f0;
+    --text-secondary: #b0b0b0;
+    --border-color: #444;
+  }
+  
+  .container {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  }
+  
+  .flashcard-front {
+    background: #2d2d2d;
+    border-color: #444;
+  }
+  
+  .answer-btn {
+    background: #2d2d2d;
+    border-color: #444;
+  }
+  
+  .answer-btn:hover {
+    background: #3d3d3d;
+  }
+}
+
+/* ===== تحسينات لإمكانية الوصول ===== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* التركيز للوحة المفاتيح */
+button:focus-visible,
+input:focus-visible,
+.answer-btn:focus-visible {
+  outline: 2px solid var(--secondary-color);
+  outline-offset: 2px;
+}
+
+/* تحسين النص للقارئ */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ===== رسومات تحميل ===== */
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading {
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* تأثيرات لمسية للهواتف */
+@media (hover: none) {
+  button:hover,
+  .answer-btn:hover {
+    transform: none;
+  }
+}
+
+/* تحسينات للطباعة */
+@media print {
+  .container {
+    box-shadow: none;
+    width: 100%;
+    max-width: none;
+  }
+  
+  header,
+  #navigation,
+  #timer-container,
+  button {
+    display: none;
+  }
+  
+  #results {
+    display: block;
+  }
+}

@@ -1,0 +1,109 @@
+<!doctypehtml><html dir=rtl lang=ar><meta charset=UTF-8><meta content="width=device-width,initial-scale=1,user-scalable=yes"name=viewport><meta content="نظام تفاعلي للدراسة والاختبار يساعدك على التعلم بطريقة فعالة ومسلية"name=description><meta content="اختبار, دراسة, تعليم, بطاقات تعليمية, امتحان, تفاعلي"name=keywords><meta content="نظام الدراسة التفاعلي"name=author><meta content="noindex, nofollow"name=robots><meta content=#2c3e50 name=theme-color><meta content="light dark"name=color-scheme><link href=assets/favicon.ico rel=icon type=image/x-icon><link href=assets/apple-touch-icon.png rel=apple-touch-icon sizes=180x180><link href=assets/manifest.json rel=manifest><link href=https://fonts.googleapis.com rel=preconnect><link href=https://fonts.gstatic.com rel=preconnect crossorigin><title>نظام الدراسة والاختبار التفاعلي</title><link href=style.css rel=stylesheet><meta content=" default-src 'self'; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; media-src 'self' data: blob:; img-src 'self' data: blob:; connect-src 'self' https:; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; "http-equiv=Content-Security-Policy><script type=application/ld+json>{
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "نظام الدراسة والاختبار التفاعلي",
+        "description": "تطبيق ويب تفاعلي للدراسة والاختبار",
+        "applicationCategory": "Educational",
+        "operatingSystem": "Web Browser",
+        "permissions": "microphone",
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        }
+      }</script><a class=skip-link href=#content-area>تخطي إلى المحتوى الرئيسي</a><div id=notifications-container aria-label="منطقة الإشعارات"aria-live=polite></div><div class=container role=main><header role=banner><h1 id=app-title>نظام الدراسة والاختبار التفاعلي</h1><div class=controls role=group aria-labelledby=controls-heading><h2 id=controls-heading class=sr-only>عناصر التحكم</h2><div class=input-group><label for=json-file>ملف JSON الحالي:</label><div style=display:flex;gap:10px;align-items:center><input id=json-file autocomplete=off name=json-file placeholder="لم يتم تحميل أي ملف بعد"aria-describedby=file-help spellcheck=false maxlength=100 readonly disabled></div><small class=help-text id=file-help>سيتم اختيار ملف JSON عند الضغط على "ابدأ الاختبار"</small></div><div class=input-group><label for=username>اسم المستخدم:</label> <input id=username autocomplete=name name=username placeholder="أدخل اسمك"aria-describedby=username-help spellcheck=false maxlength=50 minlength=2 required> <small class=help-text id=username-help>اسمك سيظهر في النتائج ولوحة الصدارة</small></div><div class=button-group role=group aria-label="أزرار التحكم الأساسية"><button id=start-btn type=button class=primary aria-describedby=start-help>ابدأ الاختبار</button> <button id=pause-btn type=button aria-label="إيقاف الاختبار مؤقتاً"disabled>إيقاف مؤقت</button></div><small class=help-text id=start-help>تأكد من إدخال اسمك وتحديد ملف الاختبار قبل البدء</small></div><div class=tabs role=tablist aria-label="أوضاع الاختبار"><button id=flashcards-tab class="tab-button active"aria-controls=content-area aria-selected=true role=tab tabindex=0><span class=tab-icon>🃏</span> البطاقات التعليمية <span class=tab-description>مراجعة المعلومات قبل الاختبار</span></button> <button id=quiz-tab class=tab-button aria-controls=content-area aria-selected=false role=tab tabindex=-1><span class=tab-icon>📝</span> الاختبار <span class=tab-description>اختبر معرفتك بالإجابة على الأسئلة</span></button></div><button id=dark-mode-toggle type=button class=dark-mode-toggle aria-label="تبديل إلى الوضع الداكن"title="تغيير مظهر التطبيق">🌙</button><details class=settings-menu aria-label="إعدادات التطبيق"><summary>⚙️ الإعدادات</summary><div class=settings-panel><h3>إعدادات الصوت والتأثيرات</h3><label class=checkbox-label><input id=audio-toggle type=checkbox checked> <span>تشغيل الأصوات</span></label> <label class=checkbox-label><input id=visual-effects-toggle type=checkbox checked> <span>التأثيرات البصرية</span></label> <label for=volume-slider>مستوى الصوت:</label> <input id=volume-slider type=range aria-label="مستوى الصوت"max=1 min=0 step=0.1 value=0.7><output for=volume-slider id=volume-output>70%</output><button id=reset-settings type=button class=secondary>إعادة تعيين الإعدادات</button></div></details></header><main role=main tabindex=-1><div id=quiz-info role=status aria-live=polite><span id=quiz-title aria-label="عنوان الاختبار"></span> <span id=question-counter aria-label="رقم السؤال الحالي"></span><div id=timer-container role=timer aria-label=المؤقت><div id=timer-bar aria-hidden=true></div><span id=timer-text>0 ثانية</span></div></div><section id=content-area role=tabpanel aria-label="محتوى الاختبار"aria-live=polite><div class=welcome-message><h2>مرحباً بك في نظام الدراسة التفاعلي!</h2><p>لبدء الاختبار، يرجى:<ol><li>إدخال اسم المستخدم<li>تحديد ملف JSON للاختبار<li>الضغط على "ابدأ الاختبار"</ol></div></section><nav aria-label="التنقل في الاختبار"id=navigation role=navigation><button id=prev-btn type=button aria-label="الانتقال إلى السؤال السابق"disabled title="السهم الأيسر">⬅️ السابق</button> <button id=flip-btn type=button aria-label="قلب البطاقة لرؤية الإجابة"disabled title="السهم الأسفل">🔄 قلب البطاقة</button> <button id=next-btn type=button aria-label="الانتقال إلى السؤال التالي"disabled title="السهم الأيمن">التالي ➡️</button></nav><section id=results role=region aria-labelledby=results-heading class=hidden><h2 id=results-heading>نتيجة الاختبار</h2><div id=stats role=group aria-label="إحصائيات النتائج"><div class=stat-item><span class=stat-label>عدد الأسئلة:</span> <span class=stat-value id=total-questions>0</span></div><div class=stat-item><span class=stat-label>الإجابات الصحيحة:</span> <span class=stat-value id=correct-answers>0</span></div><div class=stat-item><span class=stat-label>الإجابات الخاطئة:</span> <span class=stat-value id=wrong-answers>0</span></div><div class=stat-item><span class=stat-label>عدد التوقفات:</span> <span class=stat-value id=pauses-count>0</span></div></div><details class=hidden id=wrong-questions-list><summary><h3>الأسئلة التي أخطأت فيها</h3></summary><ul aria-label="قائمة الأسئلة الخاطئة"id=wrong-questions role=list></ul></details><div class=hidden id=comparison-section><button id=compare-btn type=button class=secondary>📊 مقارنة أدائك بالامتحانات السابقة</button><div class=hidden role=region id=leaderboard aria-labelledby=leaderboard-heading><h3 id=leaderboard-heading>لوحة الصدارة</h3><table aria-label="ترتيب النتائج"role=table><caption class=sr-only>جدول يعرض ترتيب المستخدمين حسب نتائج الاختبار<thead><tr><th scope=col>المستخدم<th scope=col>الإجابات الصحيحة<th scope=col>النسبة المئوية<tbody id=leaderboard-body></table></div></div><div class=results-actions><button id=restart-btn type=button class=primary>🔄 إعادة الاختبار</button> <button id=export-results type=button class=secondary>💾 تصدير النتائج</button> <button id=share-results type=button class=secondary>🔗 مشاركة النتائج</button></div></section></main><footer role=contentinfo><div class=footer-content><p>© 2024 نظام الدراسة والاختبار التفاعلي<div class=footer-links><button id=help-btn type=button class=link-button aria-label=مساعدة>❓ مساعدة</button> <button id=about-btn type=button class=link-button aria-label="حول التطبيق">ℹ️ حول</button> <button id=feedback-btn type=button class=link-button aria-label="إرسال ملاحظات">💬 ملاحظات</button></div></div></footer></div><div class=flash-hidden role=img id=flash-overlay aria-hidden=true></div><dialog aria-labelledby=help-dialog-title id=help-dialog role=dialog><div class=dialog-content><header class=dialog-header><h2 id=help-dialog-title>مساعدة - كيفية الاستخدام</h2><button id=close-help-dialog type=button class=close-button aria-label="إغلاق مربع المساعدة">✕</button></header><main class=dialog-body><section><h3>اختصارات لوحة المفاتيح:</h3><ul><li><kbd>←</kbd> السؤال السابق<li><kbd>→</kbd> السؤال التالي<li><kbd>↓</kbd> قلب البطاقة<li><kbd>Space</kbd> إيقاف/استئناف المؤقت<li><kbd>Escape</kbd> إنهاء الاختبار</ul></section><section><h3>خطوات الاستخدام:</h3><ol><li>أدخل اسم المستخدم<li>اختر ملف JSON للاختبار<li>اضغط "ابدأ الاختبار"<li>راجع البطاقات التعليمية أولاً<li>انتقل لوضع الاختبار<li>أجب على الأسئلة<li>راجع النتائج والإحصائيات</ol></section><section><h3>نصائح مهمة:</h3><ul><li>استخدم البطاقات التعليمية للمراجعة قبل الاختبار<li>يمكنك إيقاف المؤقت مؤقتاً عند الحاجة<li>راجع الأسئلة الخاطئة لتحسين أدائك<li>قارن نتائجك مع المحاولات السابقة</ul></section></main><footer class=dialog-footer><button id=got-it-btn type=button class=primary>فهمت</button></footer></div></dialog><dialog aria-labelledby=about-dialog-title id=about-dialog role=dialog><div class=dialog-content><header class=dialog-header><h2 id=about-dialog-title>حول نظام الدراسة التفاعلي</h2><button id=close-about-dialog type=button class=close-button aria-label="إغلاق مربع المعلومات">✕</button></header><main class=dialog-body><p>نظام تعليمي تفاعلي مصمم لمساعدتك على الدراسة والتحضير للاختبارات بطريقة فعالة وممتعة.<h3>المميزات:</h3><ul><li>🃏 بطاقات تعليمية تفاعلية<li>📝 أسئلة اختيار من متعدد<li>⏱️ مؤقت زمني قابل للتخصيص<li>📊 إحصائيات مفصلة للأداء<li>🏆 لوحة صدارة ومقارنات<li>🔊 تأثيرات صوتية وبصرية<li>♿ دعم كامل لإمكانية الوصول<li>📱 تصميم متجاوب للجوالات</ul><h3>تقنيات مستخدمة:</h3><ul><li>HTML5 & CSS3<li>JavaScript (ES6+)<li>Web Audio API<li>Local Storage<li>Service Workers</ul><p class=version-info><strong>الإصدار:</strong> 2.0<br><strong>تاريخ التحديث:</strong> <time datetime=2024-12-19>19 ديسمبر 2024</time></main><footer class=dialog-footer><button id=close-about-btn type=button class=primary>إغلاق</button></footer></div></dialog><dialog aria-labelledby=feedback-dialog-title id=feedback-dialog role=dialog><div class=dialog-content><header class=dialog-header><h2 id=feedback-dialog-title>إرسال ملاحظات</h2><button id=close-feedback-dialog type=button class=close-button aria-label="إغلاق نموذج الملاحظات">✕</button></header><main class=dialog-body><form id=feedback-form novalidate><div class=form-group><label for=feedback-type>نوع الملاحظة:</label> <select id=feedback-type name=type required><option value="">اختر نوع الملاحظة<option value=bug>تبليغ عن مشكلة<option value=feature>اقتراح ميزة جديدة<option value=improvement>اقتراح تحسين<option value=general>ملاحظة عامة</select></div><div class=form-group><label for=feedback-message>رسالتك:</label> <textarea id=feedback-message maxlength=1000 name=message placeholder="اكتب ملاحظتك هنا..."required rows=5></textarea> <small class=char-counter><span id=char-count>0</span> / 1000 حرف</small></div><div class=form-group><label for=feedback-email>بريدك الإلكتروني (اختياري):</label> <input id=feedback-email type=email autocomplete=email name=email placeholder=example@domain.com> <small>للرد على ملاحظتك</small></div></form></main><footer class=dialog-footer><button id=send-feedback-btn type=submit class=primary form=feedback-form>📤 إرسال</button> <button id=cancel-feedback-btn type=button class=secondary>إلغاء</button></footer></div></dialog><div class=hidden role=progressbar aria-label="تقدم التحميل"id=progress-bar><div class=progress-fill></div><span class=progress-text>0%</span></div><div class=sr-only id=screen-reader-announcements aria-atomic=true aria-live=assertive></div><audio aria-label="صوت الإجابة الصحيحة"id=correct-sound preload=metadata><source src=assets/sounds/correct.mp3 type=audio/mpeg><source src=assets/sounds/correct.wav type=audio/wav>متصفحك لا يدعم تشغيل الصوتيات</audio><audio aria-label="صوت الإجابة الخاطئة"id=wrong-sound preload=metadata><source src=assets/sounds/wrong.mp3 type=audio/mpeg><source src=assets/sounds/wrong.wav type=audio/wav>متصفحك لا يدعم تشغيل الصوتيات</audio><audio aria-label="صوت إنهاء الاختبار"id=complete-sound preload=metadata><source src=assets/sounds/complete.mp3 type=audio/mpeg><source src=assets/sounds/complete.wav type=audio/wav></audio><audio aria-label="صوت الإشعارات"id=notification-sound preload=metadata><source src=assets/sounds/notification.mp3 type=audio/mpeg><source src=assets/sounds/notification.wav type=audio/wav></audio><script type=module src=js/main.js></script><script>if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker
+            .register("/sw.js")
+            .then((registration) => {
+              console.log("تم تسجيل Service Worker:", registration);
+            })
+            .catch((error) => {
+              console.log("فشل في تسجيل Service Worker:", error);
+            });
+        });
+      }</script><script>// مراقبة أداء التطبيق
+      if ("performance" in window && "PerformanceObserver" in window) {
+        const observer = new PerformanceObserver((list) => {
+          for (const entry of list.getEntries()) {
+            if (entry.entryType === "navigation") {
+              console.log(
+                "وقت تحميل الصفحة:",
+                entry.loadEventEnd - entry.loadEventStart,
+                "ms"
+              );
+            } else if (entry.entryType === "paint") {
+              console.log(entry.name + ":", entry.startTime, "ms");
+            }
+          }
+        });
+
+        observer.observe({ entryTypes: ["navigation", "paint"] });
+      }
+
+      // مراقبة الأخطاء JavaScript
+      window.addEventListener("error", (event) => {
+        console.error("خطأ JavaScript:", {
+          message: event.message,
+          filename: event.filename,
+          lineno: event.lineno,
+          colno: event.colno,
+          error: event.error,
+        });
+
+        // يمكن إرسال هذه المعلومات لخدمة مراقبة الأخطاء
+      });
+
+      // مراقبة الوعود المرفوضة
+      window.addEventListener("unhandledrejection", (event) => {
+        console.error("وعد مرفوض:", event.reason);
+        event.preventDefault();
+      });</script><div class=hidden id=debug-info aria-hidden=true><details><summary>معلومات التطوير</summary><dl><dt>إصدار التطبيق:<dd id=app-version>2.0<dt>متصفح المستخدم:<dd id=user-agent><dt>دعم الميزات:<dd id=feature-support><dt>معلومات الشاشة:<dd id=screen-info><dt>إحصائيات الأداء:<dd id=performance-stats></dl></details></div><script>if (localStorage.getItem("debugMode") === "true") {
+        document.getElementById("debug-info").classList.remove("hidden");
+
+        // ملء المعلومات التطوير
+        document.getElementById("user-agent").textContent = navigator.userAgent;
+
+        const features = {
+          "Local Storage": "localStorage" in window,
+          "Service Worker": "serviceWorker" in navigator,
+          "Web Audio":
+            "AudioContext" in window || "webkitAudioContext" in window,
+          "File API": "FileReader" in window,
+          "Intersection Observer": "IntersectionObserver" in window,
+          "Performance API": "performance" in window,
+        };
+
+        const featuresList = Object.entries(features)
+          .map(
+            ([feature, supported]) => `${feature}: ${supported ? "✅" : "❌"}`
+          )
+          .join(", ");
+
+        document.getElementById("feature-support").textContent = featuresList;
+
+        const screenInfo = `${screen.width}×${screen.height}, DPR: ${devicePixelRatio}`;
+        document.getElementById("screen-info").textContent = screenInfo;
+      }</script><script type=application/ld+json>{
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "نظام الدراسة والاختبار التفاعلي",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Any",
+        "description": "نظام تفاعلي للدراسة والاختبار يساعد الطلاب على التعلم بطريقة فعالة",
+        "url": window.location.href,
+        "author": {
+          "@type": "Organization",
+          "@name": "فريق التطوير التعليمي"
+        },
+        "dateModified": "2024-12-19",
+        "version": "2.0",
+        "features": [
+          "بطاقات تعليمية تفاعلية",
+          "اختبارات اختيار من متعدد",
+          "مؤقت زمني",
+          "إحصائيات الأداء",
+          "لوحة الصدارة",
+          "تأثيرات صوتية وبصرية"
+        ]
+      }</script>

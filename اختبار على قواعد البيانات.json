@@ -1,0 +1,305 @@
+{
+  "title": "مراجعة SQL Server والـ Relational Model",
+  "timer": 90,
+  "flashcards": [
+    {
+      "question": "ما هو Predicate Logic؟",
+      "answer": "فرع رياضي أساسه المنطق القائم على القضايا، يعتمد على أن الـ Predicate إما صادق (true) أو كاذب (false)، وهو الأساس الذي بُني عليه النموذج العلائقي."
+    },
+    {
+      "question": "ما المقصود بـ Predicate؟",
+      "answer": "هو خاصية أو تعبير يكون صادقًا أو غير صادق (true/false) مثل: salary > 0."
+    },
+    {
+      "question": "كيف يُستخدم Predicate في قواعد البيانات؟",
+      "answer": "يُستخدم لحفظ سلامة البيانات (Integrity) عبر Constraints أو لتصفية البيانات في الاستعلامات."
+    },
+    {
+      "question": "ما الفرق بين Two-valued logic و Three-valued logic؟",
+      "answer": "في Two-valued logic القضايا إما True أو False فقط. أما Three-valued logic فتضيف Unknown عند وجود NULL."
+    },
+    {
+      "question": "ما دور NULL في SQL؟",
+      "answer": "هو Marker يدل على قيمة مفقودة وليس قيمة بحد ذاتها."
+    },
+    {
+      "question": "ما هي أنواع القيود Constraints في النموذج العلائقي؟",
+      "answer": "Candidate keys (تكامل الكيان Entity Integrity) و Foreign keys (تكامل مرجعي Referential Integrity)."
+    },
+    {
+      "question": "ما الفرق بين Candidate Key و Primary Key؟",
+      "answer": "Candidate Key مفتاح ممكن أن يعرّف الصف uniquely. Primary Key هو المفتاح المختار منها، والبقية Alternate Keys."
+    },
+    {
+      "question": "ما هي وظيفة Foreign Key؟",
+      "answer": "يضمن أن قيم العمود في الجدول المرجِع موجودة في الجدول المرجَع إليه، مما يحافظ على التكامل المرجعي."
+    },
+    {
+      "question": "ما الهدف من Normalization؟",
+      "answer": "تقليل التكرار والازدواجية في البيانات، وضمان أن كل كيان يُمثَّل بعلاقة واحدة."
+    },
+    {
+      "question": "ما مضمون First Normal Form (1NF)؟",
+      "answer": "يجب أن تكون الصفوف فريدة والخصائص Atomic (غير قابلة للتقسيم)."
+    },
+    {
+      "question": "ما مضمون Second Normal Form (2NF)؟",
+      "answer": "يجب أن تحقق 1NF، وكل خاصية غير مفتاحية تعتمد على كامل المفتاح المرشَّح وليس جزءًا منه."
+    },
+    {
+      "question": "ما مضمون Third Normal Form (3NF)؟",
+      "answer": "يجب أن تحقق 2NF، وألا تكون الخصائص غير المفتاحية معتمدة على بعضها البعض (لا اعتماد انتقالي)."
+    },
+    {
+      "question": "ما هو OLTP؟",
+      "answer": "Online Transactional Processing، نظام موجّه لإدخال وتحديث البيانات (Insert, Update, Delete)."
+    },
+    {
+      "question": "لماذا لا يناسب OLTP التقارير؟",
+      "answer": "لأن النموذج فيه مُطبّع (Normalized) مما يستلزم وصلات (Joins) معقدة بين جداول كثيرة."
+    },
+    {
+      "question": "ما هو Data Warehouse (DW)؟",
+      "answer": "بيئة مخصصة للاستعلامات والتحليلات، ذات نموذج غير مُطبّع بالكامل، يحوي جداول أقل وعلاقات أبسط."
+    },
+    {
+      "question": "ما هو Star Schema؟",
+      "answer": "تصميم في DW يتكون من Fact Table في الوسط تحيط به Dimension Tables مثل: Customers، Products."
+    },
+    {
+      "question": "ما الفرق بين Star Schema و Snowflake Schema؟",
+      "answer": "في Star كل Dimension جدول واحد فيه بيانات مكررة، أما Snowflake فتُطبّع الأبعاد إلى جداول فرعية."
+    },
+    {
+      "question": "ما المقصود بـ ETL؟",
+      "answer": "Extract, Transform, Load: عملية استخراج البيانات من المصادر، تنظيفها وتحويلها، ثم تحميلها في DW."
+    },
+    {
+      "question": "ما هي نكهات Microsoft RDBMS الثلاث؟",
+      "answer": "Box (On-premises SQL Server)، Appliance (حل جاهز مع العتاد)، Cloud (IaaS/PaaS)."
+    },
+    {
+      "question": "ما الفرق بين IaaS و PaaS في سحابة مايكروسوفت؟",
+      "answer": "IaaS: خادم افتراضي تُديره أنت برمجياً، PaaS: خدمة مُدارة بالكامل من مايكروسوفت مثل Azure SQL Database."
+    }
+  ],
+  "quizQuestions": [
+    {
+      "question": "أي من التالي يُمثل تعريف Predicate؟",
+      "incorrectAnswers": [
+        "مفتاح أساسي لتعريف الصف",
+        "وظيفة تجمع بيانات متعددة",
+        "مخطط لربط الجداول"
+      ],
+      "correctAnswer": "خاصية أو تعبير يُقيّم إلى True أو False"
+    },
+    {
+      "question": "ما القانون الذي يحكم Two-valued logic؟",
+      "incorrectAnswers": [
+        "قانون التكامل المرجعي",
+        "قانون الاعتماد الانتقالي",
+        "قانون التطبيع"
+      ],
+      "correctAnswer": "قانون الوسط المستبعَد (Law of Excluded Middle)"
+    },
+    {
+      "question": "في SQL، ما هو NULL؟",
+      "incorrectAnswers": [
+        "قيمة صفرية",
+        "قيمة فارغة String",
+        "قيمة عددية غير معروفة"
+      ],
+      "correctAnswer": "Marker يدل على قيمة مفقودة"
+    },
+    {
+      "question": "ما نوع التكامل الذي يضمنه Candidate Key؟",
+      "incorrectAnswers": [
+        "Referential Integrity",
+        "Domain Integrity",
+        "Temporal Integrity"
+      ],
+      "correctAnswer": "Entity Integrity"
+    },
+    {
+      "question": "ما الذي يضمنه Foreign Key؟",
+      "incorrectAnswers": [
+        "فردية الصفوف",
+        "التحقق من Atomic attributes",
+        "وجود Alternate Keys"
+      ],
+      "correctAnswer": "Referential Integrity"
+    },
+    {
+      "question": "أي من التالي يُمثل هدف Normalization؟",
+      "incorrectAnswers": [
+        "زيادة التكرار لتحسين السرعة",
+        "تقليل العلاقات بين الجداول",
+        "إلغاء المفاتيح الأجنبية"
+      ],
+      "correctAnswer": "تقليل التكرار والازدواجية مع الحفاظ على الكمال"
+    },
+    {
+      "question": "أي قاعدة تخص 1NF؟",
+      "incorrectAnswers": [
+        "اعتماد الخصائص غير المفتاحية على كامل المفتاح",
+        "منع الاعتماد الانتقالي",
+        "وجوب وجود مفتاح أجنبي"
+      ],
+      "correctAnswer": "الخصائص Atomic والصفوف فريدة"
+    },
+    {
+      "question": "ما الذي يخالف 2NF؟",
+      "incorrectAnswers": [
+        "وجود قيم NULL",
+        "وجود علاقات أبعاد في DW",
+        "وجود أكثر من مفتاح مرشَّح"
+      ],
+      "correctAnswer": "اعتماد خاصية غير مفتاحية على جزء من المفتاح المرشَّح"
+    },
+    {
+      "question": "ما الذي يميز 3NF؟",
+      "incorrectAnswers": [
+        "منع NULL",
+        "استخدام Star Schema",
+        "استخدام OLTP فقط"
+      ],
+      "correctAnswer": "منع اعتماد خاصية غير مفتاحية على أخرى غير مفتاحية"
+    },
+    {
+      "question": "أي عبارة تلخص 2NF و3NF؟",
+      "incorrectAnswers": [
+        "كل خاصية تعتمد على المفتاح وعلى جزء منه",
+        "المفتاح يعتمد على الخصائص غير المفتاحية",
+        "الخصائص المستنسخة أفضل للأداء"
+      ],
+      "correctAnswer": "كل خاصية غير مفتاحية تعتمد على المفتاح، كامل المفتاح، ولا شيء غير المفتاح"
+    },
+    {
+      "question": "ما الغرض الأساسي من OLTP؟",
+      "incorrectAnswers": [
+        "التقارير والتحليلات",
+        "دمج البيانات التاريخية",
+        "تخزين الأبعاد Facts & Dimensions"
+      ],
+      "correctAnswer": "إدخال البيانات وتحديثها (Insert/Update/Delete)"
+    },
+    {
+      "question": "لماذا لا يناسب OLTP التحليلات؟",
+      "incorrectAnswers": [
+        "لأنه يخزن البيانات في Fact Tables",
+        "لأنه لا يقبل NULLs",
+        "لأنه لا يدعم T-SQL"
+      ],
+      "correctAnswer": "لأن النموذج مُطبّع ويحتاج وصلات معقدة بين جداول كثيرة"
+    },
+    {
+      "question": "ما تعريف Data Warehouse؟",
+      "incorrectAnswers": [
+        "خادم افتراضي يديره العميل",
+        "مخطط للتعامل مع OLTP",
+        "نظام لإدارة المعاملات اليومية"
+      ],
+      "correctAnswer": "بيئة للتحليلات والاستعلامات ذات نموذج مُبسّط يحتوي تكرارًا مقصودًا"
+    },
+    {
+      "question": "ما أبسط تصميم لـ DW؟",
+      "incorrectAnswers": [
+        "Snowflake Schema",
+        "Normalized Schema",
+        "ETL Schema"
+      ],
+      "correctAnswer": "Star Schema"
+    },
+    {
+      "question": "في Snowflake Schema، ماذا يحدث للأبعاد؟",
+      "incorrectAnswers": [
+        "تُخزَّن جميعها في Fact Table",
+        "تُلغى العلاقات بينها",
+        "تُستبدل بمفاتيح أساسية"
+      ],
+      "correctAnswer": "تُطبّع إلى جداول متعددة بدلاً من جدول واحد"
+    },
+    {
+      "question": "ما دور Fact Table؟",
+      "incorrectAnswers": [
+        "تخزين أسماء العملاء",
+        "تخزين تفاصيل المنتجات",
+        "تخزين سمات الأبعاد"
+      ],
+      "correctAnswer": "تخزين الحقائق والمقاييس مثل الكمية والقيمة"
+    },
+    {
+      "question": "ما وظيفة ETL؟",
+      "incorrectAnswers": [
+        "تحويل OLTP إلى OLAP مباشرة",
+        "إنشاء مفاتيح أساسية وأجنبية",
+        "تصفية NULLs فقط"
+      ],
+      "correctAnswer": "استخراج وتحويل وتحميل البيانات في DW"
+    },
+    {
+      "question": "ما هي نكهات RDBMS التي تقدمها مايكروسوفت؟",
+      "incorrectAnswers": [
+        "Enterprise, Developer, Express",
+        "Client, Server, Distributed",
+        "Simplex, Duplex, Triplex"
+      ],
+      "correctAnswer": "Box, Appliance, Cloud"
+    },
+    {
+      "question": "ما مثال على Appliance؟",
+      "incorrectAnswers": [
+        "Azure SQL Database",
+        "Contained Database",
+        "SQL Server Express"
+      ],
+      "correctAnswer": "Microsoft Analytics Platform System (APS)"
+    },
+    {
+      "question": "أي من التالي يُمثّل IaaS؟",
+      "incorrectAnswers": [
+        "Azure SQL Database",
+        "Data Lake",
+        "PolyBase"
+      ],
+      "correctAnswer": "خادم افتراضي مع SQL Server مُثبت مسبقًا يُدار من العميل"
+    },
+    {
+      "question": "أي من التالي يُمثّل PaaS؟",
+      "incorrectAnswers": [
+        "VM مع SQL Server مُدار من العميل",
+        "Snowflake Schema",
+        "Contained Database"
+      ],
+      "correctAnswer": "Azure SQL Database خدمة مُدارة بالكامل من مايكروسوفت"
+    },
+    {
+      "question": "أي خدمة PaaS توفرها مايكروسوفت للتحليلات؟",
+      "incorrectAnswers": [
+        "SQL Server Express",
+        "HDInsight فقط",
+        "DocumentDB"
+      ],
+      "correctAnswer": "Azure SQL Data Warehouse"
+    },
+    {
+      "question": "أي من التالي مرتبط بـ PolyBase؟",
+      "incorrectAnswers": [
+        "إدارة OLTP",
+        "إنشاء مفاتيح أساسية",
+        "إلغاء NULLs"
+      ],
+      "correctAnswer": "تشغيل استعلامات T-SQL على بيانات علائقية وغير علائقية معًا"
+    },
+    {
+      "question": "أي عبارة صحيحة عن T-SQL في البيئات المختلفة؟",
+      "incorrectAnswers": [
+        "يختلف كليًا بين SQL Server وAzure",
+        "غير مدعوم في Appliance",
+        "لا يُستخدم في OLTP"
+      ],
+      "correctAnswer": "معظم T-SQL مشترك بين SQL Server وAzure SQL Database"
+    }
+  ],
+  "stats": []
+}

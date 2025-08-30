@@ -1,0 +1,21 @@
+quiz-app-react/
+├── public/
+│   ├── index.html
+│   └── assets/
+│       ├── sounds/
+│       └── icons/
+├── src/
+│   ├── components/
+│   │   ├── App.jsx
+│   │   ├── Header/
+│   │   ├── Quiz/
+│   │   ├── Flashcards/
+│   │   ├── Results/
+│   │   ├── Timer/
+│   │   ├── Notification/
+│   │   └── common/
+│   ├── hooks/
+│   ├── utils/
+│   ├── styles/
+│   └── index.js
+└── package.json

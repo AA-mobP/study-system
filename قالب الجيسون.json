@@ -1,0 +1,157 @@
+{
+  "title": "اسم الاختبار أو البطاقات التعليمية",
+  "timer": 60,
+  "flashcards": [
+    {
+      "question": "1نص السؤال على الوجه",
+      "answer": "نص الإجابة على الظهر"
+    },
+    {
+      "question": "2نص السؤال على الوجه",
+      "answer": "نص الإجابة على الظهر"
+    }
+  ],
+  "quizQuestions": [
+    {
+      "question": "1نص السؤال",
+      "incorrectAnswers": [
+        "الخيار 2",
+        "الخيار 3",
+        "الخيار 4"
+      ],
+      "correctAnswer": "الخيار 1"
+    },
+    {
+      "question": "2نص السؤال",
+      "incorrectAnswers": [
+        "الخيار 2",
+        "الخيار 3",
+        "الخيار 4"
+      ],
+      "correctAnswer": "الخيار 1"
+    }
+  ],
+  "stats": [    
+    {
+      "username": "admin",
+      "date": "2025-08-27T21:59:59.951Z",
+      "quizTitle": "اسم الاختبار أو البطاقات التعليمية",
+      "mode": "quiz",
+      "totalQuestions": 2,
+      "answeredQuestions": 2,
+      "correct": 1,
+      "wrong": 1,
+      "skipped": 0,
+      "unanswered": 0,
+      "scorePercent": 50,
+      "weightedScorePercent": 50,
+      "letterGrade": "F",
+      "totalTimeSec": 94,
+      "avgTimePerQuestionSec": 10.58,
+      "fastestQuestionSec": 2.45,
+      "slowestQuestionSec": 18.71,
+      "perQuestionTimeSec": [
+        2.45,
+        18.71
+      ],
+      "pauses": 1,
+      "totalPauseTimeSec": 28,
+      "streak": 1,
+      "maxStreak": 1,
+      "accuracy": 50,
+      "performanceLevel": "يحتاج تحسين",
+      "difficultyAnalysis": "صعب",
+      "categoryPerformance": {
+        "عام": {
+          "total": 2,
+          "correct": 1,
+          "totalTime": 21.162,
+          "questions": [
+            0,
+            1
+          ],
+          "accuracy": 50,
+          "avgTime": 10.58
+        }
+      },
+      "difficultyPerformance": {
+        "medium": {
+          "total": 2,
+          "correct": 1,
+          "totalTime": 21.162,
+          "questions": [
+            0,
+            1
+          ],
+          "accuracy": 50,
+          "avgTime": 10.58
+        }
+      },
+      "wrongQuestionsList": [
+        {
+          "index": 0,
+          "question": "1نص السؤال",
+          "selectedAnswer": "الخيار 3",
+          "correctAnswer": "الخيار 1",
+          "explanation": null
+        }
+      ],
+      "skippedQuestionsList": [],
+      "detailedAnswers": [
+        {
+          "questionIndex": 0,
+          "isCorrect": false,
+          "timeSpent": 2.45,
+          "category": "",
+          "difficulty": "medium"
+        },
+        {
+          "questionIndex": 1,
+          "isCorrect": true,
+          "timeSpent": 18.71,
+          "category": "",
+          "difficulty": "medium"
+        }
+      ],
+      "completionRate": 100,
+      "efficiency": 60,
+      "improvement": {
+        "available": false,
+        "message": "يتطلب محاولات سابقة"
+      },
+      "rawData": {
+        "answers": [
+          {
+            "questionIndex": 0,
+            "question": "1نص السؤال",
+            "selectedAnswer": "الخيار 3",
+            "correctAnswer": "الخيار 1",
+            "isCorrect": false,
+            "timeSpent": 2.454,
+            "timestamp": "2025-08-27T21:59:37.737Z",
+            "category": "",
+            "difficulty": "medium"
+          },
+          {
+            "questionIndex": 1,
+            "question": "1نص السؤال",
+            "selectedAnswer": "الخيار 1",
+            "correctAnswer": "الخيار 1",
+            "isCorrect": true,
+            "timeSpent": 18.708,
+            "timestamp": "2025-08-27T21:59:58.448Z",
+            "category": "",
+            "difficulty": "medium"
+          }
+        ],
+        "questionTimeSpent": [
+          2.454,
+          18.708
+        ],
+        "totalPauseTime": 28.2,
+        "startTime": "2025-08-27T21:57:57.873Z",
+        "endTime": "2025-08-27T21:59:59.951Z"
+      }
+    }
+  ]
+}

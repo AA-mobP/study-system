@@ -1,0 +1,113 @@
+.results {
+  padding: var(--space-xl);
+  background: var(--bg-primary);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.results h2 {
+  font-size: var(--font-size-xxl);
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+.results h2::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: var(--secondary-color);
+  border-radius: var(--radius-sm);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-md);
+}
+
+.stat-item {
+  padding: var(--space-lg);
+  background: var(--bg-secondary);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 2px solid transparent;
+  transition: all var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-item:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--secondary-color);
+}
+
+.stat-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--secondary-color);
+}
+
+.stat-label {
+  font-weight: var(--font-weight-medium);
+  color: var(--text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.stat-value {
+  font-weight: var(--font-weight-bold);
+  font-size: var(--font-size-xl);
+  color: var(--primary-color);
+}
+
+.results-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-lg);
+}
+
+.no-results {
+  text-align: center;
+  padding: var(--space-xxl);
+  color: var(--text-secondary);
+}
+
+.no-results h2 {
+  margin-bottom: var(--space-md);
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .results {
+    padding: var(--space-lg);
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    gap: var(--space-sm);
+  }
+}
